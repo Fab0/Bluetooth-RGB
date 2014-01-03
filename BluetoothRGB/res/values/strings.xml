@@ -26,4 +26,8 @@
     <string name="secure_connect">Connect a device - Secure</string>
     <string name="insecure_connect">Connect a device - Insecure</string>
     <string name="discoverable">Make discoverable</string>
+    <string name="button_change_color">Farbe ändern</string>
+    <string name="button_static_color">Statische Farbe</string>
+    <string name="button_fade_color">Faden</string>
+    <string name="mode">Modus</string>
 </resources>

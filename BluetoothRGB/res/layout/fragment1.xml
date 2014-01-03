@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:tools="http://schemas.android.com/tools"
-xmlns:app="http://schemas.android.com/apk/res/com.larswerkman.demo.colorpicker"
 android:id="@+id/fragment0"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
@@ -12,7 +11,7 @@ android:orientation="vertical" >
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Modus"
+        android:text="@string/mode"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#FFFFFF" />
  <LinearLayout
@@ -23,13 +22,13 @@ android:orientation="vertical" >
         android:id="@+id/button_hsv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Statische Farbe" />
+        android:text="@string/button_static_color" />
 
     <Button
         android:id="@+id/button_fade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Faden" />
+        android:text="@string/button_fade_color" />
    </LinearLayout>
    
 
