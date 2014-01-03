@@ -11,11 +11,11 @@ tools:context=".Main" >
 <com.fab.bluetoothrgb.CustomViewPager xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/pager"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="250dp">
 </com.fab.bluetoothrgb.CustomViewPager>
 
 
-    <ListView android:id="@+id/in"
+     <ListView android:id="@+id/in"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:stackFromBottom="true"
@@ -39,5 +39,6 @@ tools:context=".Main" >
             android:text="@string/send"
         />
     </LinearLayout>
+ 
      
 </LinearLayout>
