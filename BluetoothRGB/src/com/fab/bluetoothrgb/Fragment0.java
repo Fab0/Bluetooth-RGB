@@ -20,12 +20,13 @@ public class Fragment0 extends Fragment implements OnColorChangedListener {
 	private SVBar svBar;
 	private Button button;
 	private TextView text;
+	private View rootView;
 	
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
  
-        View rootView = inflater.inflate(R.layout.fragment0, container, false);
+        rootView = inflater.inflate(R.layout.fragment0, container, false);
          
     	picker = (CustomColorPicker) rootView.findViewById(R.id.picker);
     	svBar = (SVBar) rootView.findViewById(R.id.svbar);
@@ -53,6 +54,5 @@ public class Fragment0 extends Fragment implements OnColorChangedListener {
 	@Override
 	public void onColorChanged(int color) {
 		// TODO Auto-generated method stub
-		
 	}
 }

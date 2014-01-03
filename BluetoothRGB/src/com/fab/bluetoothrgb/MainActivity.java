@@ -8,7 +8,6 @@ import android.app.Activity;
 import android.app.FragmentTransaction;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -17,11 +16,9 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.KeyEvent;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.EditorInfo;
@@ -94,7 +91,6 @@ protected void onCreate(Bundle savedInstanceState) {
 
     actionBar = getActionBar();
     mAdapter = new TabsPagerAdapter(getSupportFragmentManager());
-    viewPager.setBlockSwipe(true);
 
     viewPager.setAdapter(mAdapter);
     actionBar.setHomeButtonEnabled(false);

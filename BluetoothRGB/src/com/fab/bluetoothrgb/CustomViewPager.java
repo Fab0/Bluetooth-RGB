@@ -20,13 +20,16 @@ public class CustomViewPager extends ViewPager {
     public void setBlockSwipe(boolean blockSwipe) {
         this.blockSwipe = blockSwipe;
     }
-
+    
     @Override
     public boolean onInterceptTouchEvent(MotionEvent arg0) {
+    	boolean ret;
         if (blockSwipe)
-            return false;
+        	ret= false;
         else 
-            return super.onInterceptTouchEvent(arg0);
+        	ret= super.onInterceptTouchEvent(arg0);
+        blockSwipe=false;
+        return ret;
     }
    
     @Override
@@ -37,5 +40,4 @@ public class CustomViewPager extends ViewPager {
             return super.onTouchEvent(arg0);
     }  
     
-
 }
