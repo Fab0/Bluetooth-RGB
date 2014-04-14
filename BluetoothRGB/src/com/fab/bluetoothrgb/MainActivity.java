@@ -9,6 +9,7 @@ import android.app.FragmentTransaction;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.Intent;
+import android.media.ToneGenerator;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -39,7 +40,7 @@ private CustomViewPager viewPager;
 private TabsPagerAdapter mAdapter;
 private ActionBar actionBar;
 // Tab titles
-private String[] tabs = { "Tab1", "Tab2"};
+private String[] tabs = { "Tab1", "Tab2", "Tab3"};
 
 
 // Debugging
@@ -372,19 +373,10 @@ public boolean onOptionsItemSelected(MenuItem item) {
 	
     Intent serverIntent = null;
     switch (item.getItemId()) {
-    case R.id.secure_connect_scan:
-        // Launch the DeviceListActivity to see devices and do scan
-        serverIntent = new Intent(this, DeviceListActivity.class);
-        startActivityForResult(serverIntent, REQUEST_CONNECT_DEVICE_SECURE);
-        return true;
     case R.id.insecure_connect_scan:
         // Launch the DeviceListActivity to see devices and do scan
         serverIntent = new Intent(this, DeviceListActivity.class);
         startActivityForResult(serverIntent, REQUEST_CONNECT_DEVICE_INSECURE);
-        return true;
-    case R.id.discoverable:
-        // Ensure this device is discoverable by others
-        ensureDiscoverable();
         return true;
     }
     
@@ -418,7 +410,6 @@ public void onTabUnselected(Tab tab, FragmentTransaction ft) {
 @Override
 public void onColorChanged(int color) {
 	// TODO Auto-generated method stub
-	
 }
 
 }

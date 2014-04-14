@@ -30,4 +30,12 @@
     <string name="button_static_color">Statische Farbe</string>
     <string name="button_fade_color">Faden</string>
     <string name="mode">Modus</string>
+    <string name="speed">Geschwindigkeit</string>
+    <string name="button_jump_color">Springen</string>
+    <string name="rgb">RGB</string>
+    <string name="button_set_time">Set Time</string>
+    <string name="button_fade_out">Fad Out</string>
+    <string name="button_fade_in">Fade In</string>
+    <string name="Button_get_time">Get Time</string>
+    <string name="button_pulse_color">Pulse</string>
 </resources>

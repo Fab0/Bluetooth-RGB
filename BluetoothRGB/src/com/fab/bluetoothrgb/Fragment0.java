@@ -1,6 +1,9 @@
 package com.fab.bluetoothrgb;
 
 
+import android.graphics.Color;
+import android.media.AudioManager;
+import android.media.ToneGenerator;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -20,18 +23,24 @@ public class Fragment0 extends Fragment implements OnColorChangedListener {
 	private SVBar svBar;
 	private Button button;
 	private TextView text;
-	private View rootView;
+	private View rootView_0;
+	private View rootView_2;
+	private long millis_start;
+	private long millis;
 	
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
+    	millis_start = System.currentTimeMillis();
+    	
  
-        rootView = inflater.inflate(R.layout.fragment0, container, false);
+    	rootView_0 = inflater.inflate(R.layout.fragment0, container, false);
+    	rootView_2 = inflater.inflate(R.layout.fragment2, container, false);
          
-    	picker = (CustomColorPicker) rootView.findViewById(R.id.picker);
-    	svBar = (SVBar) rootView.findViewById(R.id.svbar);
-    	button = (Button) rootView.findViewById(R.id.button1);
-    	text = (TextView) rootView.findViewById(R.id.textView1);
+    	picker = (CustomColorPicker) rootView_0.findViewById(R.id.picker);
+    	svBar = (SVBar) rootView_0.findViewById(R.id.svbar);
+    	button = (Button) rootView_0.findViewById(R.id.button1);
+    	text = (TextView) rootView_0.findViewById(R.id.textView1);
     	
 
     	
@@ -48,11 +57,19 @@ public class Fragment0 extends Fragment implements OnColorChangedListener {
     		}
     	});
         
-        return rootView;
+        return rootView_0;
     }
 
 	@Override
 	public void onColorChanged(int color) {
 		// TODO Auto-generated method stub
+		millis=System.currentTimeMillis()-millis_start;
+		if(millis>100)
+		{
+			((MainActivity) getActivity()).sendMessage(picker.getHSVstring(color));	
+			millis_start=System.currentTimeMillis();
+		}
+		
+		//((TextView) rootView_2.findViewById(R.id.editText_red)).setText(Integer.toString(Color.red(color)));
 	}
 }
